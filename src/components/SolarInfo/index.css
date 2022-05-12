@@ -1,0 +1,56 @@
+.solarInfoCont {
+    width: 100%;
+    padding: 64px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-direction: column;
+}
+
+.solarInfoTitleCont {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.solarInfoTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #212528;
+}
+
+.solarInfoLine {
+    width: 750px;
+    height: 0px;
+    border: 2px solid #475afe;
+    border-radius: 2px;
+}
+
+.solarInfoTxt {
+    width: 90%;
+    max-width: 980px;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: justify;
+    color: #212528;
+}
+
+.solarInfoTxtList {
+    padding-left: 16px;
+}
+
+.solarInfoButton {
+    color: #fff;
+    width: 240px;
+}
+
+.solarInfoButton:hover {
+    background: #fff;
+}
+
+.solarInfoButtonIcon {
+    background: #fff;
+}
