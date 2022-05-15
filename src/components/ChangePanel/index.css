@@ -1,0 +1,17 @@
+.changePanel {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    background: #25B258;
+    width: 120px;
+    transition: all 0.2s ease-in-out;
+}
+
+.changePanel:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}

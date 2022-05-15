@@ -1,0 +1,10 @@
+.titleSectionCalcCont {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 32px auto 16px auto;
+}
+
+.titleSectionCalc {
+    font-weight: 300;
+    color: #212528;
+}

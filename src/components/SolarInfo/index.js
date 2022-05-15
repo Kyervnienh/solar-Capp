@@ -24,7 +24,7 @@ const SolarInfo = () => {
                 <span className="solarInfoTxtList">• Inversor</span></p>
 
             <Link to="/informacion-adicional" className='button solarInfoButton'>Más Información
-                <i class="buttonIcon solarInfoButtonIcon fa-solid fa-angles-right" /></Link>
+                <i className="buttonIcon solarInfoButtonIcon fa-solid fa-angles-right" /></Link>
         </div>
     )
 }

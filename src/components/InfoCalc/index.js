@@ -21,7 +21,7 @@ const InfoCalc = () => {
                         Con esta heramienta podrás hacer el calculo y conocer los elementos necesarios para una instalación solar autónoma
                         y una instalación interconectada a la red.  </p>
                     <Link to="/como-funciona" className='button infoCalcButton'>¿Cómo funciona?
-                        <i class="buttonIcon infoCalcButtonIcon fa-solid fa-angles-right" /></Link>
+                        <i className="buttonIcon infoCalcButtonIcon fa-solid fa-angles-right" /></Link>
                 </div>
 
                 <img alt="panel-bateria-inversor" src="https://images.pexels.com/photos/3400813/pexels-photo-3400813.jpeg"

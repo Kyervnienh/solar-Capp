@@ -1,0 +1,10 @@
+.solarCalcTitle {
+    text-align: center;
+    margin: 16px 0;
+    color: #212528;
+    font-weight: 300; 
+}
+
+.hidePanel {
+    display: none;
+}
