@@ -5,7 +5,7 @@ const ChangePanel = ( props ) => {
 
 
     return(
-        <button className={` changePanel changePanel${props.children}`} onClick={props.action}>{props.children}</button>
+        <button className="changePanel" onClick={props.action}>{props.children}</button>
     )
 }
 

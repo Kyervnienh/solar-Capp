@@ -1,0 +1,19 @@
+.solarBatteriesDays {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.daysInput {
+    width: 100px;
+}
+
+.solarBatteryCont {
+    justify-content: space-around;
+}
+
+.solarBatteryStat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

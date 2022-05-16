@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import EnergyConsum from "../../components/EnergyConsum";
 import Map from "../../components/Map";
+import Review from "../../components/Review";
 import SelectCalc from "../../components/SelectCalc";
+import SolarBatteries from "../../components/SolarBatteries";
 import SolarInfo from "../../components/SolarInfo";
 import SolarPanels from "../../components/SolarPanels";
 import './index.css'
@@ -24,6 +26,10 @@ const SolarCalcAut = () => {
             {panel === "consumo" ? <EnergyConsum  setPanel={setPanel} panels={panels} setConsum={setConsum} consum={consum} /> : null}
 
             {panel === "paneles" ? <SolarPanels setPanel={setPanel} panels={panels} /> : null}
+
+            {panel === "baterias" ? <SolarBatteries setPanel={setPanel} panels={panels} /> : null}
+
+            {panel === "resumen" ? <Review setPanel={setPanel} panels={panels} /> : null}
 
             {console.log(position, consum)}
 

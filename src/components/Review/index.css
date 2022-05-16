@@ -1,0 +1,20 @@
+.solarCalcReview {
+    display: grid;
+    width: 90vw;
+    max-width: 1200px;
+    margin: 32px auto 64px auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 48px;
+    align-items: center;
+}
+
+.solarCalcTitleElement {
+    font-weight: 700;
+}
+
+.changePanelReview {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 16px auto;
+    text-align: left;
+}

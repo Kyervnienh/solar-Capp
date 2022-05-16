@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TitleSectionCalc from "../../TitleSectionCalc";
+import TitleSectionCalc from "../TitleSectionCalc";
 import ChangePanel from "../ChangePanel";
 import fichaSolar from "./ficha-panel-solar.png";
 import "./index.css";
@@ -78,12 +78,12 @@ const SolarPanels = (props) => {
 
             <TitleSectionCalc>Paneles solares necesarios</TitleSectionCalc>
             <div className="solarCalcTxtElementCont">
-                <p className="solarCalcTxtElement ml-16">Total: <span className="solarCalcTxtElementSpan">{7}</span></p>
+                <p className="solarCalcTxtElement">Total: <span className="solarCalcTxtElementSpan">{7}</span></p>
                 <p className="solarCalcTxtElement">Conectados en paralelo: <span className="solarCalcTxtElementSpan">{7}</span></p>
                 <p className="solarCalcTxtElement">Conectados en serie: <span className="solarCalcTxtElementSpan">{1}</span></p>
             </div>
             <div className="changePanelCont">
-                <ChangePanel action={previousPage}>Anterior</ChangePanel>
+                <ChangePanel action={previousPage}>Atrás</ChangePanel>
                 <ChangePanel action={nextPage}>Siguiente</ChangePanel>
             </div>
 

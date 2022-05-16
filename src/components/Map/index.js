@@ -3,7 +3,7 @@ import { TileLayer, Marker, Popup, MapContainer, useMapEvents } from 'react-leaf
 import 'leaflet/dist/leaflet.css';
 import { MarkerIcon } from './react-leaflet-icon.js';
 import './index.css';
-import TitleSectionCalc from '../../TitleSectionCalc/index.js';
+import TitleSectionCalc from '../TitleSectionCalc/index.js';
 import ChangePanel from '../ChangePanel/index.js';
 
 
