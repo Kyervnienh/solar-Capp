@@ -16,15 +16,32 @@
     min-width: 320px;
 }
 
-.changePanelEnergy {
-    width: 90vw;
-    max-width: 1200px;
-    margin: 16px auto;
-    display: flex;
-    justify-content: space-between;
+.energyConsumptionInput {
+    width: 100%;
+    outline: none;
+    padding: 8px;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #212528;
+    background: rgba(37, 178, 88, 0.1);
+    border: 2px solid #25B258;
+    border-radius: 10px;
+}
+
+.energyConsumptionTxt {
+    color: #212528;
+}
+
+.energyConsumptionInfo {
+    color: rgba(33, 37, 40, 0.75);
+}
+
+.energyConsumptionLink {
+    text-decoration: none;
+    color: #475afe;
 }
 
 .energyImg {
-    width: 50%;
+    width: 55%;
     min-width: 320px;
 }

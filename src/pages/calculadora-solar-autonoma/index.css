@@ -5,6 +5,29 @@
     font-weight: 300; 
 }
 
-.hidePanel {
-    display: none;
+.solarCalcTxtElementCont {
+    width: 90vw;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 32px auto;
+}
+
+.solarCalcTxtElement {
+    color: #212528;
+}
+
+.solarCalcTxtElementSpan {
+    color: #25B258;
+    font-size: 24px;
+    margin-left: 8px;
+}
+
+.changePanelCont {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 16px auto;
+    display: flex;
+    justify-content: space-between;
 }
