@@ -20,17 +20,26 @@ const SelectPosition = ({ setPosition }) => {
 const Map = (props) => {
 
     const action = (e) => {
+
+        fetch(`https://power.larc.nasa.gov/api/temporal/monthly/point?start=2020&end=2021&latitude=${props.position.lat}&longitude=${props.position.lng}&community=re&parameters=ALLSKY_SFC_SW_DWN&format=json&user=Kevin&header=true&time-standard=lst"}`)
+            .then((response) => {
+                return response.json()
+            })
+            .then((irradiance) => {
+                props.setIrradiance({ ...irradiance });
+            });
+
         e.preventDefault();
         props.setPanel(props.panels[1]);
         window.scrollTo({
             left: 0,
-            top: 0,
+            top: 100,
             behavior: "smooth",
-          });
+        });
     }
 
     return (
-        <>
+        <div className='solarCalcContainer'>
             <TitleSectionCalc>Selecciona tu ubicación</TitleSectionCalc>
             <MapContainer center={props.position} zoom={6}>
                 <TileLayer
@@ -49,7 +58,7 @@ const Map = (props) => {
             <p className='userDataUse'>* La información proporcionada por tu ubicación no se guarda en nuestros servidores, se usa única y
                 exclusivamente para los cálculos correspondientes realizados por esta herramienta.
             </p>
-        </>
+        </ div>
     )
 }
 

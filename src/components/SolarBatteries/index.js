@@ -13,7 +13,7 @@ const SolarBatteries = (props) => {
         props.setPanel(props.panels[4]);
         window.scrollTo({
             left: 0,
-            top: 0,
+            top: 100,
             behavior: "smooth",
         });
     }
@@ -23,14 +23,14 @@ const SolarBatteries = (props) => {
         props.setPanel(props.panels[2]);
         window.scrollTo({
             left: 0,
-            top: 0,
+            top: 100,
             behavior: "smooth",
         });
     }
 
 
     return (
-        <>
+        <div className="solarCalcContainer">
             <TitleSectionCalc>Características del arreglo de baterías recomendado</TitleSectionCalc>
             <div className="solarCalcTxtElementCont">
                 <div className="solarBatteriesDays">
@@ -89,7 +89,7 @@ const SolarBatteries = (props) => {
                 <ChangePanel action={nextPage}>Siguiente</ChangePanel>
             </div>
 
-        </>
+        </div>
     )
 }
 

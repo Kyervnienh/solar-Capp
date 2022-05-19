@@ -8,13 +8,21 @@ import img from "./recibo.png";
 const EnergyConsum = (props) => {
 
     const nextPage = (e) => {
+        props.setMinPower(props.consum * 1000 /
+            ((props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013] + props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013]) / 2)
+            / 0.7 / 30);
+
+        props.setMaxPower(1.2 * props.consum * 1000 /
+            ((props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013] + props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013]) / 2)
+            / 0.7 / 30);
+
         e.preventDefault();
         props.setPanel(props.panels[2]);
         window.scrollTo({
             left: 0,
-            top: 0,
+            top: 100,
             behavior: "smooth",
-          });
+        });
     }
 
     const previousPage = (e) => {
@@ -22,19 +30,32 @@ const EnergyConsum = (props) => {
         props.setPanel(props.panels[0]);
         window.scrollTo({
             left: 0,
-            top: 0,
+            top: 100,
             behavior: "smooth",
-          });
+        });
+    }
+
+    const getPotential = (e) => {
+        if (e.target.value === "Poseo aparatos eléctricos moderados") props.setPotential(24);
+        if (e.target.value === "Poseo aparatos eléctricos moderados y aire acondicionado") props.setPotential(48);
+        if (e.target.value === "Poseo una gran cantidad de aparatos eléctricos") props.setPotential(48);
+        if (e.target.value === "Poseo una gran cantidad de aparatos eléctricos y aire acondicionado") props.setPotential(72);
     }
 
     return (
-        <>
-            <TitleSectionCalc>Introduce tu consumo eléctrico</TitleSectionCalc>
+        <div className="solarCalcContainer">
+            <TitleSectionCalc>Introduce tu consumo eléctrico mensual</TitleSectionCalc>
             <div className="energyConsumptionCont">
                 <div className="energyConsumptionTxtCont">
                     <input className="energyConsumptionInput" type="tel" placeholder="1234" pattern="[0-9]*" autoFocus
                         value={props.consum === 0 ? "" : props.consum}
                         onChange={e => { props.setConsum(e.target.validity.valid ? e.target.value : props.consum) }} />
+                    <select className="solarSelector energySelector" defaultValue="Poseo aparatos eléctricos moderados" onClick={e => getPotential(e)}>
+                        <option className="solarSelectorOption">Poseo aparatos eléctricos moderados</option>
+                        <option className="solarSelectorOption">Poseo aparatos eléctricos moderados y aire acondicionado</option>
+                        <option className="solarSelectorOption">Poseo una gran cantidad de aparatos eléctricos</option>
+                        <option className="solarSelectorOption">Poseo una gran cantidad de aparatos eléctricos y aire acondicionado</option>
+                    </select>
                     <p className="energyConsumptionTxt">Tu consumo eléctrico lo puedes encontrar en tu recibo de luz, aparecerá en kWh y con
                         el concepto de energía o similar.</p>
                     <div className="energyConsumptionInfoCont">
@@ -49,7 +70,7 @@ const EnergyConsum = (props) => {
                 <ChangePanel action={previousPage}>Atrás</ChangePanel>
                 <ChangePanel action={nextPage}>Siguiente</ChangePanel>
             </div>
-        </>
+        </ div>
     )
 }
 

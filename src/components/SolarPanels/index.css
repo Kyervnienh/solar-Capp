@@ -49,3 +49,14 @@
     text-align: center;
     color: rgba(33, 37, 40, 0.75);
 }
+
+.calculatePanelsCont {
+    width: 350px;
+    max-width: 100%;
+    margin: 0 auto 32px auto;
+}
+
+.calculatePanels {
+    width: 350px;
+    max-width: 95%;
+}

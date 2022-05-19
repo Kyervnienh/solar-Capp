@@ -11,14 +11,14 @@ const Review = (props) => {
         props.setPanel(props.panels[3]);
         window.scrollTo({
             left: 0,
-            top: 0,
+            top: 100,
             behavior: "smooth",
         });
     }
 
 
     return (
-        <>
+        <div className="solarCalcContainer">
             <TitleSectionCalc>Resumen</TitleSectionCalc>
             <div className="solarCalcReview">
                 <p className="solarCalcTitleElement">Paneles solares</p>
@@ -42,7 +42,7 @@ const Review = (props) => {
             <div className='changePanelReview'>
                 <ChangePanel action={action}>Atrás</ChangePanel>
             </div>
-        </>
+        </div>
     )
 }
 
