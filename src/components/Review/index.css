@@ -3,13 +3,18 @@
     width: 90vw;
     max-width: 1200px;
     margin: 32px auto 64px auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
     row-gap: 48px;
     align-items: center;
 }
 
+.solarCalcReview > .solarCalcTxtElement {
+    padding-left: 32px;
+}
+
 .solarCalcTitleElement {
     font-weight: 700;
+    padding-left: 32px;
 }
 
 .changePanelReview {
@@ -17,4 +22,8 @@
     max-width: 1200px;
     margin: 16px auto;
     text-align: left;
+}
+
+.reviewSpan {
+    font-size: 20px !important;
 }

@@ -32,9 +32,15 @@
     color: #25B258;
     border: 3px solid #25B258;
     border-radius: 0 30px 30px 0;
+    transition: all 0.2s ease-in-out;
 }
 
 .selected {
     background: #25B258;
     color: #fff;
+    cursor: default;
+}
+
+.noSelected:hover {
+    transform: scale(1.05);
 }

@@ -8,13 +8,13 @@ import img from "./recibo.png";
 const EnergyConsum = (props) => {
 
     const nextPage = (e) => {
-        props.setMinPower(props.consum * 1000 /
-            ((props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013] + props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013]) / 2)
-            / 0.7 / 30);
+        const irradianceSort = Object.values(props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN).sort((a,b) => a-b);
 
-        props.setMaxPower(1.2 * props.consum * 1000 /
-            ((props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013] + props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013]) / 2)
-            / 0.7 / 30);
+        const minIrradiance = ( irradianceSort[0] + irradianceSort[1] ) / 2;
+
+        props.setMinPower(props.consum * 1000 / minIrradiance / 0.7 / 30);
+
+        props.setMaxPower(1.2 * props.consum * 1000 / minIrradiance / 0.7 / 30);
 
         e.preventDefault();
         props.setPanel(props.panels[2]);

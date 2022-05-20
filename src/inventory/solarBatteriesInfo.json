@@ -1,0 +1,22 @@
+{
+    "Personalizado": {
+        "potential": 0,
+        "capacity": 0
+    },
+    "Batería solar 6 V / 225 Ah": {
+        "potential": 6,
+        "capacity": 225
+    },
+    "Batería solar 6 V / 390 Ah": {
+        "potential": 6,
+        "capacity": 390
+    },
+    "Batería solar 12 V / 120 Ah": {
+        "potential": 12,
+        "capacity": 120
+    },
+    "Batería solar 12 V / 200 Ah": {
+        "potential": 12,
+        "capacity": 200
+    }
+}

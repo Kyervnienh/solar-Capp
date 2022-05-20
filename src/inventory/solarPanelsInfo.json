@@ -1,0 +1,37 @@
+{
+    "Personalizado": {
+        "power": 0,
+        "voc": 0,
+        "isc": 0,
+        "vmp": 0,
+        "imp": 0
+    },
+    "Panel solar 150 W": {
+        "power": 150,
+        "voc": 22.7,
+        "isc": 8.58,
+        "vmp": 18.3,
+        "imp": 8.2
+    },
+    "Panel solar 250 W": {
+        "power": 250,
+        "voc": 34.1,
+        "isc": 9.19,
+        "vmp": 28.4,
+        "imp": 8.8
+    },
+    "Panel solar 330 W": {
+        "power": 330,
+        "voc": 46.79,
+        "isc": 9.18,
+        "vmp": 37.87,
+        "imp": 9.71
+    },
+    "Panel solar 400 W": {
+        "power": 400,
+        "voc": 49.3,
+        "isc": 10.39,
+        "vmp": 41.6,
+        "imp": 9.58
+    }
+}

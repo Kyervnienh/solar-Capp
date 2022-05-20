@@ -5,8 +5,14 @@ import "./index.css"
 
 const SolarBatteries = (props) => {
 
-    const [solarBattery, setSolarBattery] = useState('Personalizado');
     const [days, setDays] = useState(2);
+
+    props.setMinCapacity(2 * props.consum * 1000 / props.potential / 30 / 0.8 / 0.85 / 0.8);
+
+    const calculateBatteries = () => {
+        props.setBatterySerie(Math.round(props.potential / props.solarBattery[1].potential));
+        props.setBatteryParallel(Math.round(props.minCapacity / props.solarBattery[1].capacity));
+    }
 
     const nextPage = (e) => {
         e.preventDefault();
@@ -35,20 +41,20 @@ const SolarBatteries = (props) => {
             <div className="solarCalcTxtElementCont">
                 <div className="solarBatteriesDays">
                     <p className="solarCalcTxtElement">Días de autonomía:</p>
-                    <input className="solarCalcInputElement daysInput" defaultValue={days} onChange={e => setDays(e.target.value)} />
+                    <input className="solarCalcInputElement daysInput" type="tel" pattern="[0-9]*" value={days === 0 ? "" : days}
+                        onChange={e => { setDays(e.target.validity.valid ? e.target.value : days) }}
+                        onKeyUp={props.setMinCapacity(days * props.consum * 1000 / props.potential / 30 / 0.8 / 0.85 / 0.8)} />
                 </div>
-                <p className="solarCalcTxtElement">Voltaje: <span className="solarCalcTxtElementSpan">{24 + " V"}</span></p>
-                <p className="solarCalcTxtElement">Capacidad total recomendada: <span className="solarCalcTxtElementSpan">{688 + " Ah"}</span></p>
+                <p className="solarCalcTxtElement">Voltaje: <span className="solarCalcTxtElementSpan">{props.potential + " V"}</span></p>
+                <p className="solarCalcTxtElement">Capacidad total recomendada: <span className="solarCalcTxtElementSpan">
+                    {props.minCapacity.toFixed(2) + " Ah"}</span></p>
             </div>
 
             <div className="solarPanelSelectionCont">
-                <p className="solarCalcTxtElement">Selecciona un panel solar estándar o introduce las caracteristicas de tu propio panel solar:</p>
-                <select className="solarSelector" defaultValue="Personalizado" onChange={e => setSolarBattery(e.target.value)}>
-                    <option className="solarSelectorOption">Personalizado</option>
-                    <option className="solarSelectorOption">Batería solar 1</option>
-                    <option className="solarSelectorOption">Batería solar 2</option>
-                    <option className="solarSelectorOption">Batería solar 3</option>
-                    <option className="solarSelectorOption">Batería solar 4</option>
+                <p className="solarCalcTxtElement">Selecciona una batería estándar o introduce las caracteristicas de tu propia batería:</p>
+                <select className="solarSelector batteriesSelector" defaultValue={props.solarBattery[0]}
+                    onChange={e => props.setSolarBattery([e.target.value, props.solarBatteriesInfo[e.target.value]])}>
+                    {Object.keys(props.solarBatteriesInfo).map(name => <option key={name} className="solarSelectorOption">{name}</option>)}
                 </select>
             </div>
 
@@ -56,33 +62,57 @@ const SolarBatteries = (props) => {
             <div className="solarCalcTxtElementCont solarBatteryCont">
                 <div className="solarBatteryStat">
                     <p className="solarCalcTxtElement">Voltaje (V):</p>
-                    <input className="solarCalcInputElement" />
+                    <input className="solarCalcInputElement" type="tel" pattern="[0-9]+([\.,][0-9]{0,2})?"
+                        value={props.solarBattery[1].potential ? props.solarBattery[1].potential : ""} onChange={e => {
+                            if (e.target.validity.valid) {
+                                let newData = [...props.solarBattery];
+                                newData[1] = { ...newData[1], potential: e.target.value }
+                                props.setSolarBattery(newData);
+                            }
+                        }} />
                 </div>
                 <div className="solarBatteryStat">
                     <p className="solarCalcTxtElement">Capacidad (Ah):</p>
-                    <input className="solarCalcInputElement" />
+                    <input className="solarCalcInputElement" type="tel" pattern="[0-9]+([\.,][0-9]{0,2})?"
+                        value={props.solarBattery[1].capacity ? props.solarBattery[1].capacity : ""} onChange={e => {
+                            if (e.target.validity.valid) {
+                                let newData = [...props.solarBattery];
+                                newData[1] = { ...newData[1], capacity: e.target.value }
+                                props.setSolarBattery(newData);
+                            }
+                        }} />
                 </div>
             </div>
 
-            <TitleSectionCalc>Baterías necesarias</TitleSectionCalc>
-            <div className="solarCalcTxtElementCont">
-                <p className="solarCalcTxtElement">Total: <span className="solarCalcTxtElementSpan">{12}</span></p>
-                <p className="solarCalcTxtElement">Conectados en paralelo: <span className="solarCalcTxtElementSpan">{6}</span></p>
-                <p className="solarCalcTxtElement">Conectados en serie: <span className="solarCalcTxtElementSpan">{2}</span></p>
+            <div className="calculatePanelsCont">
+                <button className="changePanel calculatePanels" onClick={calculateBatteries}> Calcular las baterías necesarias</button>
             </div>
 
-            <TitleSectionCalc>Inversor recomendado</TitleSectionCalc>
-            <div className="solarCalcTxtElementCont solarBatteryCont">
-                <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan">{24 + " V"}</span></p>
-                <p className="solarCalcTxtElement">Potencia nominal: <span className="solarCalcTxtElementSpan">{2200 + " VA"}</span></p>
-            </div>
+            {props.batteryParallel && props.batterySerie ? <>
 
-            <TitleSectionCalc>Regulador de carga recomendado</TitleSectionCalc>
-            <div className="solarCalcTxtElementCont">
-                <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan">{24 + " V"}</span></p>
-                <p className="solarCalcTxtElement">Intensidad nominal: <span className="solarCalcTxtElementSpan">{80 + " A"}</span></p>
-                <p className="solarCalcTxtElement">Potencia de carga: <span className="solarCalcTxtElementSpan">{2000 + " W"}</span></p>
-            </div>
+                <TitleSectionCalc>Baterías necesarias</TitleSectionCalc>
+                <div className="solarCalcTxtElementCont">
+                    <p className="solarCalcTxtElement">Total: <span className="solarCalcTxtElementSpan">
+                        {props.batteryParallel * props.batterySerie}</span></p>
+                    <p className="solarCalcTxtElement">Conectados en paralelo: <span className="solarCalcTxtElementSpan">{props.batteryParallel}</span></p>
+                    <p className="solarCalcTxtElement">Conectados en serie: <span className="solarCalcTxtElementSpan">{props.batterySerie}</span></p>
+                </div>
+
+                <TitleSectionCalc>Inversor recomendado</TitleSectionCalc>
+                <div className="solarCalcTxtElementCont solarBatteryCont">
+                    <p className="solarCalcTxtElement">Voltaje de entrada: <span className="solarCalcTxtElementSpan">{props.potential + " V"}</span></p>
+                    <p className="solarCalcTxtElement">Potencia nominal: <span className="solarCalcTxtElementSpan">
+                        {Math.floor((props.solarPanel[1].power * props.panelParallel * props.panelSerie) / 500) * 500 + " VA"}</span></p>
+                </div>
+
+                <TitleSectionCalc>Regulador de carga recomendado</TitleSectionCalc>
+                <div className="solarCalcTxtElementCont">
+                    <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan">{props.potential + " V"}</span></p>
+                    <p className="solarCalcTxtElement">Intensidad nominal mínima: <span className="solarCalcTxtElementSpan">
+                        {props.solarPanel[1].isc * props.panelParallel * 1.25 + " A"}</span></p>
+                    <p className="solarCalcTxtElement">Potencia de carga: <span className="solarCalcTxtElementSpan">
+                        {Math.floor((props.solarPanel[1].power * props.panelParallel * props.panelSerie) / 500) * 500 + " W"}</span></p>
+                </div></> : null}
 
             <div className="changePanelCont">
                 <ChangePanel action={previousPage}>Atrás</ChangePanel>
