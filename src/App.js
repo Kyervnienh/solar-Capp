@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Header from './components/Header'
 import Home from './pages/Home';
 import SolarCalcAut from './pages/calculadora-solar-autonoma';
+import SolarCalcInter from './pages/calculadora-solar-interconectado';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/calculadora-solar-autonomo' element={<SolarCalcAut />} />
+          <Route path='/calculadora-solar-interconectado' element={<SolarCalcInter />} />
         </Routes>
         <Footer />
       </Router>

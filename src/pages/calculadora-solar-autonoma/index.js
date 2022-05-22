@@ -34,13 +34,13 @@ const SolarCalcAut = () => {
 
     return (
         <>
-            <h3 className="solarCalcTitle">Calculadora solar</h3>
+            <h3 className="solarCalcTitle">Calculadora solar autónoma</h3>
             <SelectCalc selected="autonomo" />
 
             {panel === "mapa" ? <Map setIrradiance={setIrradiance} position={position} setPosition={setPosition} setPanel={setPanel} panels={panels} /> : null}
 
             {panel === "consumo" ? <EnergyConsum irradiance={irradiance} setMinPower={setMinPower} setMaxPower={setMaxPower} setPotential={setPotential}
-                setPanel={setPanel} panels={panels} setConsum={setConsum} consum={consum} /> : null}
+                setPanel={setPanel} panels={panels} setConsum={setConsum} consum={consum} eff={0.7} calculator="auto" /> : null}
 
             {panel === "paneles" ? <SolarPanels minPower={minPower} maxPower={maxPower} potential={potential} setPanel={setPanel}
                 panels={panels} setPanelParallel={setPanelParallel} setPanelSerie={setPanelSerie} panelParallel={panelParallel}

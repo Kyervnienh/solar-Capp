@@ -87,6 +87,15 @@ body {
   border-radius: 2px;
 }
 
+.solarCalcContainer {
+  width: 95vw;
+  max-width: 1250px;
+  margin: 32px auto 16px auto;
+  padding: 16px 0;
+  border-radius: 30px;
+  box-shadow: 1px 1px 5px rgba(33, 37, 40, 0.5);
+}
+
 .solarSelector {
   margin-left: 16px;
   width: 200px;
@@ -116,4 +125,39 @@ body {
     background: rgba(37, 178, 88, 0.1);
     border: 2px solid #25B258;
     border-radius: 10px;
+}
+
+.solarCalcTitle {
+  text-align: center;
+  margin: 16px 0;
+  color: #212528;
+  font-weight: 300; 
+}
+
+.solarCalcTxtElementCont {
+  width: 90vw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 32px auto;
+}
+
+.solarCalcTxtElement {
+  color: #212528;
+}
+
+.solarCalcTxtElementSpan {
+  color: #25B258;
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+.changePanelCont {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: space-between;
 }

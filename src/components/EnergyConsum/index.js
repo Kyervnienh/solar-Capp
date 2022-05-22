@@ -8,13 +8,18 @@ import img from "./recibo.png";
 const EnergyConsum = (props) => {
 
     const nextPage = (e) => {
-        const irradianceSort = Object.values(props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN).sort((a,b) => a-b);
+        let irradianceAvg;
+        if (props.calculator === "auto"){ 
+            const irradianceSort = Object.values(props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN).sort((a,b) => a-b);
+            irradianceAvg = ( irradianceSort[0] + irradianceSort[1] ) / 2;
+            props.setMaxPower(1.2 * props.consum * 1000 / irradianceAvg / props.eff / 30);
+        }
+        if (props.calculator === "inter"){
+            irradianceAvg = (props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013] + props.irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202113]) / 2; 
+        }
+        
 
-        const minIrradiance = ( irradianceSort[0] + irradianceSort[1] ) / 2;
-
-        props.setMinPower(props.consum * 1000 / minIrradiance / 0.7 / 30);
-
-        props.setMaxPower(1.2 * props.consum * 1000 / minIrradiance / 0.7 / 30);
+        props.setMinPower(props.consum * 1000 / irradianceAvg / props.eff / 30);
 
         e.preventDefault();
         props.setPanel(props.panels[2]);
@@ -68,7 +73,7 @@ const EnergyConsum = (props) => {
             </div>
             <div className="changePanelCont">
                 <ChangePanel action={previousPage}>Atrás</ChangePanel>
-                <ChangePanel action={nextPage}>Siguiente</ChangePanel>
+                {props.consum ? <ChangePanel action={nextPage}>Siguiente</ChangePanel> : null }
             </div>
         </ div>
     )

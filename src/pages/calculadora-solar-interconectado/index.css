@@ -1,0 +1,37 @@
+.solarCalcTitle {
+    text-align: center;
+    margin: 16px 0;
+    color: #212528;
+    font-weight: 300; 
+}
+
+
+.energySavingCont {
+    width: 90vw;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.energySavingSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.interInput1 {
+    width: 80px;
+}
+
+.interInput{
+    width: 120px;
+}
+
+.energySavingTxt {
+    margin: 24px 0;
+}

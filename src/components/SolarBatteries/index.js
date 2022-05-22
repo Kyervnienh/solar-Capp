@@ -10,8 +10,13 @@ const SolarBatteries = (props) => {
     props.setMinCapacity(2 * props.consum * 1000 / props.potential / 30 / 0.8 / 0.85 / 0.8);
 
     const calculateBatteries = () => {
-        props.setBatterySerie(Math.round(props.potential / props.solarBattery[1].potential));
-        props.setBatteryParallel(Math.round(props.minCapacity / props.solarBattery[1].capacity));
+        if (props.solarBattery[1].potential && props.solarBattery[1].capacity) {
+            props.setBatterySerie(Math.round(props.potential / props.solarBattery[1].potential));
+            props.setBatteryParallel(Math.round(props.minCapacity / props.solarBattery[1].capacity));
+        } else {
+            props.setBatteryParallel(0);
+            props.setBatterySerie(0);
+        }
     }
 
     const nextPage = (e) => {
@@ -109,14 +114,14 @@ const SolarBatteries = (props) => {
                 <div className="solarCalcTxtElementCont">
                     <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan">{props.potential + " V"}</span></p>
                     <p className="solarCalcTxtElement">Intensidad nominal mínima: <span className="solarCalcTxtElementSpan">
-                        {props.solarPanel[1].isc * props.panelParallel * 1.25 + " A"}</span></p>
+                        {10 * Math.ceil(props.solarPanel[1].isc * props.panelParallel * 1.25 / 10) + " A"}</span></p>
                     <p className="solarCalcTxtElement">Potencia de carga: <span className="solarCalcTxtElementSpan">
                         {Math.floor((props.solarPanel[1].power * props.panelParallel * props.panelSerie) / 500) * 500 + " W"}</span></p>
                 </div></> : null}
 
             <div className="changePanelCont">
                 <ChangePanel action={previousPage}>Atrás</ChangePanel>
-                <ChangePanel action={nextPage}>Siguiente</ChangePanel>
+                { props.batteryParallel && props.batterySerie ? <ChangePanel action={nextPage}>Siguiente</ChangePanel> : null }
             </div>
 
         </div>

@@ -44,7 +44,7 @@ const Review = (props) => {
                 <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.potential + " V"}</span></p>
                 <p className="solarCalcTxtElement">Intensidad mínima: <span className="solarCalcTxtElementSpan reviewSpan">
-                    {props.solarPanel[1].isc * props.panelParallel * 1.25 + " A"}</span></p>
+                    {10*Math.ceil(props.solarPanel[1].isc * props.panelParallel * 1.25 / 10) + " A"}</span></p>
                 <p className="solarCalcTxtElement">Potencia: <span className="solarCalcTxtElementSpan reviewSpan">
                     {Math.floor((props.solarPanel[1].power * props.panelParallel * props.panelSerie) / 500) * 500 + " W"}</span></p>
             </div>
