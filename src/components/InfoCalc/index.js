@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
+import instalacion from "./instalacion.png";
 
 const InfoCalc = () => {
 
@@ -24,8 +25,7 @@ const InfoCalc = () => {
                         <i className="buttonIcon infoCalcButtonIcon fa-solid fa-angles-right" /></Link>
                 </div>
 
-                <img alt="panel-bateria-inversor" src="https://images.pexels.com/photos/3400813/pexels-photo-3400813.jpeg"
-                    className="infoCalcImg" />
+                <img alt="panel-bateria-inversor" src={instalacion} className="infoCalcImg" />
             </div>
         </div>
     )

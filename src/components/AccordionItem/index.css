@@ -1,0 +1,50 @@
+.accordionItem {
+    width: 100%;
+}
+
+.accordionTitle {
+    width: 100%;
+    font-size: 22px;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 2px solid #359DFE;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #212528;
+    transition: all 0.2s ease-in-out;
+}
+
+.accordionTitle:hover {
+    background: rgba(53, 157, 254, 0.05);
+}
+
+.accordionTitle i {
+    color: #359DFE;
+    transition: transform 300ms ease-in-out;
+}
+
+.expanded i {
+    transform: rotate(0.5turn);
+}
+
+.accordionTxt{
+    width: 100%;
+    padding: 0;
+    height: 0;
+    color: rgba(33, 37, 40, 0.75);
+    display: block;
+    transition: all 300ms ease-in-out;
+    border: 2px  none #359DFE;
+    overflow: hidden;
+    line-height: 30px;
+}
+
+.expanded .accordionTxt {
+    height: auto;
+    padding: 32px;
+    border: 2px  solid #359DFE;
+    border-top: none;
+}
+

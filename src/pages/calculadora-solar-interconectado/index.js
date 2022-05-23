@@ -44,7 +44,7 @@ const SolarCalcInter = () => {
             <SelectCalc selected="interconectado"></SelectCalc>
             {panel === panels[0] ? <Map setIrradiance={setIrradiance} position={position} setPosition={setPosition} setPanel={setPanel} panels={panels} /> : null}
             {panel === panels[1] ? <EnergyConsum irradiance={irradiance} setMinPower={setMinPower} setPotential={setPotential}
-                setPanel={setPanel} panels={panels} setConsum={setConsum} consum={consum} eff={0.85} calculator="inter" /> : null}
+                setPanel={setPanel} panels={panels} setConsum={setConsum} consum={consum} eff={0.8} calculator="inter" /> : null}
             {panel === panels[2] ?
                 <div className="solarCalcContainer" >
                     <TitleSectionCalc>Selección del panel solar</TitleSectionCalc>
@@ -67,7 +67,7 @@ const SolarCalcInter = () => {
                                         setConsum(e.target.value);
                                         const irradianceAvg = (irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202013] + irradiance.properties.parameter.ALLSKY_SFC_SW_DWN[202113]) / 2;
 
-                                        setMinPower(e.target.value * 1000 / irradianceAvg / 0.85 / 30);
+                                        setMinPower(e.target.value * 1000 / irradianceAvg / 0.8 / 30);
                                     }
                                 }} />
                         </div>

@@ -1,0 +1,5 @@
+.aditionalInfoCont {
+    min-height: calc(100vh - 164px);
+    overflow: auto;
+    transition: all 300ms ease-in-out;
+}

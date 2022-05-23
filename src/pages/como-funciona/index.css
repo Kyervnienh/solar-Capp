@@ -1,0 +1,35 @@
+.howToContainer {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.howToTxt {
+    max-width: 1000px;
+    text-align: justify;
+    color: #212528;
+    line-height: 30px;
+}
+
+.howToTxt a {
+    text-decoration: none;
+    color: #359DFE;
+}
+
+.howToTxt a:hover {
+    color: #475afe;
+}
+
+.howToImg {
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.howToCalc {
+    color: #212528;
+}
