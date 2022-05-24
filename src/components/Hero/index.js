@@ -9,7 +9,7 @@ const Hero = () => {
         <div className='hero'>
             <h1 className='heroTitle'>Calcula los paneles solares necesarios para tu hogar</h1>
             <p className='heroTxt'>Solo necesitas tu recibo de luz o conocer tu consumo eléctrico para realizar el calculo de una forma rápida y sencilla.</p>
-            <Link to="/calculadora-solar-autonomo" className='button heroButton'>Ir a la calculadora <i className="buttonIcon heroButtonIcon fa-solid fa-angles-right" /></Link>
+            <Link to="/calculadora-solar" className='button heroButton'>Ir a la calculadora <i className="buttonIcon heroButtonIcon fa-solid fa-angles-right" /></Link>
         </div>
     );
 }

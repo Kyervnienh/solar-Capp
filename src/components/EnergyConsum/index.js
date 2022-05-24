@@ -69,7 +69,7 @@ const EnergyConsum = (props) => {
                             ¿Cómo calcular mi consumo eléctrico?</Link>
                     </div>
                 </div>
-                <img className="energyImg" src={img} alt="consumo eléctrico en el recibo de luz" />
+                <div className="energyImgCont"><img className="energyImg" src={img} alt="consumo eléctrico en el recibo de luz" /></div>
             </div>
             <div className="changePanelCont">
                 <ChangePanel action={previousPage}>Atrás</ChangePanel>

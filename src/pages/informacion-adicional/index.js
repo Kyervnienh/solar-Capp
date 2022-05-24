@@ -26,8 +26,12 @@ const AditionalInfo = () => {
             text: "La conexión en serie sirve para incrementar el voltaje de la instalación sin incrementar la corriente, mientras que en la conexión en paralelo incrementa la corriente, pero sin incrementar el voltaje, para aprender a realizar este tipo de conexión se puede apoyar de un diagrama en internet o mediante un profesional."
         },
         {
-            title: "informacion 6",
-            text: "texto de la informacion 6"
+            title: "¿Para qué se utiliza la información de mi ubicación?",
+            text: "La ubicación se usa única y exclusivamente para obtener la irradiancia solar en la ubicación seleccionada de los datos de la NASA Prediction Of Worldwide Energy Resources y así realizar los calculos correspondientes. Los datos de ubicación no se almacenan en nuestros servidores ni se les da un uso ajeno a lo indicado."
+        },
+        {
+            title: "Al hacer el calculo para un sistema interconectado obtuve un valor negativo",
+            text: "Cuando la calculadora arroja un resultado negativo en el sistema interconectado a la red significa que su sistema es capaz de suplir el total de la demanda eléctrica y habría un exceso en la generación."
         }
     ]
 

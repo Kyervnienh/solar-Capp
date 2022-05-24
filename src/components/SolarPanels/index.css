@@ -1,10 +1,18 @@
 .calculatePanelsCont {
     width: 350px;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto 32px auto;
 }
 
 .calculatePanels {
     width: 350px;
-    max-width: 95%;
+    max-width: 100%;
+}
+
+
+@media screen and (max-width: 720px) {
+    .calculatePanels {
+        font-size: 18px;
+        line-height: 24px;
+    }
 }

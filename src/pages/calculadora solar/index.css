@@ -1,0 +1,46 @@
+.selectSolarCalcPage {
+    width: 100%;
+    min-height: calc(100vh - 154px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selectSolarSystemCont {
+    width: 100%;
+    margin-top: 32px;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.selectSolarSystem {
+    width: 220px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background: #25B258;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+    padding: 12px;
+    font-size: 20px;
+}
+
+.selectSolarSystemO {
+    font-size: 20x;
+}
+
+.selectSolarSystem:hover {
+    transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 720px) {
+    .selectSolarSystemCont {
+        flex-direction: column;
+    }
+}

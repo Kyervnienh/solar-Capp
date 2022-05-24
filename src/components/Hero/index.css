@@ -4,14 +4,15 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 32px;
-    min-height: calc(100vh - 100px);
+    padding: 32px 0;
+    min-height: calc(100vh - 90px);
     text-align: center;
 }
 
 .heroTitle {
     color: #212528;
     max-width: 1200px;
+    padding: 0 16px;
 }
 
 .heroTxt {
@@ -28,4 +29,10 @@
 
 .heroButtonIcon {
     background: #fff;
+}
+
+@media screen and (max-width: 1023px) {
+    .hero {
+        min-height: calc(100vh - 80px);;
+    }
 }

@@ -13,8 +13,8 @@ const SelectCalc = (props) => {
     return(
 
         <div className="buttonsSection">
-            <Link className={`buttonCalcSelectionAuto ${autoSelected ? "selected" : "noSelected"}`} to="/calculadora-solar-autonomo">Autónomo</Link>
-            <Link className={`buttonCalcSelectionInter ${interSelected ? "selected" : "noSelected"}`} to="/calculadora-solar-interconectado">interconectado</Link>
+            <Link className={`buttonCalcSelectionAuto ${autoSelected ? "selected" : "noSelected"}`} to="/calculadora-solar/sistema-autonomo">Autónomo</Link>
+            <Link className={`buttonCalcSelectionInter ${interSelected ? "selected" : "noSelected"}`} to="/calculadora-solar/sistema-interconectado">interconectado</Link>
         </div>
     )
 }

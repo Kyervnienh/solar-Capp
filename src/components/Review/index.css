@@ -3,13 +3,71 @@
     width: 90vw;
     max-width: 1200px;
     margin: 32px auto 64px auto;
+    grid-template-areas:
+        "panel cantidad1 potencia1 potencia1"
+        "bateria cantidad2 voltaje2 capacidad"
+        "inversor voltaje3 potencia3 potencia3"
+        "regulador voltaje4 intensidad potencia4";
     grid-template-columns: auto auto auto auto;
     row-gap: 48px;
     align-items: center;
 }
 
-.solarCalcReview > .solarCalcTxtElement {
-    padding-left: 32px;
+#panel {
+    grid-area: panel;
+}
+
+#cantidadPanel {
+    grid-area: cantidad1;
+
+}
+
+#potenciaPanel {
+    grid-area: potencia1;
+}
+
+#bateria {
+    grid-area: bateria;
+}
+
+#cantidadBateria {
+    grid-area: cantidad2;
+}
+
+#voltajeBateria {
+    grid-area: voltaje2;
+}
+
+#capacidadBateria {
+    grid-area: capacidad;
+}
+
+#inversor {
+    grid-area: inversor;
+}
+
+#voltajeInversor {
+    grid-area: voltaje3;
+}
+
+#potenciaInversor {
+    grid-area: potencia3;
+}
+
+#regulador {
+    grid-area: regulador;
+}
+
+#voltajeRegulador {
+    grid-area: voltaje4;
+}
+
+#intensidadRegulador {
+    grid-area: intensidad;
+}
+
+#potenciaRegulador {
+    grid-area: potencia4;
 }
 
 .solarCalcTitleElement {
@@ -26,4 +84,46 @@
 
 .reviewSpan {
     font-size: 20px !important;
+    line-height: 24px !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .solarCalcReview {
+        grid-template-areas:
+            "panel panel panel"
+            "cantidad1 potencia1 potencia1"
+            "bateria bateria bateria"
+            "cantidad2 voltaje2 capacidad"
+            "inversor inversor inversor"
+            "voltaje3 potencia3 potencia3"
+            "regulador regulador regulador"
+            "voltaje4 intensidad potencia4";
+        grid-template-columns: auto auto auto;
+        padding-left: 32px;
+    }
+
+    .solarCalcTitleElement {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .solarCalcReview {
+        grid-template-areas:
+            "panel panel "
+            "cantidad1 potencia1"
+            "bateria bateria"
+            "cantidad2 voltaje2"
+            "capacidad capacidad"
+            "inversor inversor"
+            "voltaje3 voltaje3"
+            "potencia3 potencia3"
+            "regulador regulador"
+            "voltaje4 voltaje4"
+            "intensidad intensidad"
+            "potencia4 potencia4";
+        grid-template-columns: auto auto;
+        text-align: center;
+        padding: 0;
+    }
 }

@@ -18,7 +18,7 @@ const SolarInfo = () => {
                 <span className="solarInfoTxtList">• Inversor</span><br /><br />
 
                 Mientras que una instalación interconectada a la red es aquella que se hace mediante un contrato con la compañia proveedora
-                de electricidad y dónde solo generas una parte de la energía que consumes y posee 2 elementos principales:<br /><br />
+                de electricidad, dónde solo generas una parte de la energía que consumes y posee 2 elementos principales:<br /><br />
 
                 <span className="solarInfoTxtList">• Panel o paneles solares</span><br />
                 <span className="solarInfoTxtList">• Inversor</span></p>

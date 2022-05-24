@@ -21,3 +21,16 @@
     margin: 16px auto;
     text-align: right;
 }
+
+@media screen and (max-width: 1023px) {
+    .leaflet-container {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .leaflet-container {
+        height: 300px;
+    }
+    
+}

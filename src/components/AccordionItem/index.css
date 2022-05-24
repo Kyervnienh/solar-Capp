@@ -8,6 +8,8 @@
     background: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 8px;
     padding: 8px 16px;
     cursor: pointer;
     border: 2px solid #359DFE;
@@ -39,6 +41,7 @@
     border: 2px  none #359DFE;
     overflow: hidden;
     line-height: 30px;
+    text-align: justify;
 }
 
 .expanded .accordionTxt {

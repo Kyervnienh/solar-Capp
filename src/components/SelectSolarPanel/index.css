@@ -5,6 +5,7 @@
     margin-bottom: 48px;
     display: flex;
     align-items: center;
+    gap: 16px;
 }
 
 .solarPanelStatsSection {
@@ -12,6 +13,7 @@
     max-width: 1200px;
     margin: 16px auto;
     margin-bottom: 48px;
+    gap: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,8 +21,8 @@
 }
 
 .solarPanelStatsCont {
-    width: 40%;
-    min-width: 337.5px;
+    width: 45%;
+    max-width: 450px;
 }
 
 .solarPanelStat {
@@ -28,12 +30,12 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     padding: 8px;
 }
 
 .solarPanelStatsImgCont {
     width: 50%;
-    min-width: 337.5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,3 +51,32 @@
     text-align: center;
     color: rgba(33, 37, 40, 0.75);
 }
+
+@media screen and (max-width: 1023px) {
+    .solarPanelStatsImgCont {
+        width: 45%;
+    }
+
+    .solarPanelStatsCont{
+        width: 50%;
+    }
+    
+}
+
+
+ @media screen and (max-width: 720px) {
+     .solarPanelSelectionCont {
+        flex-direction: column;
+        text-align: justify;
+     }
+
+     .solarPanelStatsSection{
+         flex-direction: column;
+     }
+     
+     .solarPanelStatsCont, .solarPanelStatsImgCont {
+         width: 80%;
+         min-width: 320px;
+     }
+     
+ }

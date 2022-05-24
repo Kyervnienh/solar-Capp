@@ -18,7 +18,7 @@ const SelectSolarPanel = (props) => {
                 <div className="solarPanelStatsSection">
                     <div className="solarPanelStatsCont">
                         <div className="solarPanelStat">
-                            <p className="solarCalcTxtElement">Voltaje de circuito abierto:</p>
+                            <p className="solarCalcTxtElement">Voltaje de circuito abierto (Voc):</p>
                             <input className="solarCalcInputElement" type="tel" pattern="[0-9]+([\.,][0-9]{0,2})?"
                                 value={props.solarPanel[1].voc ? props.solarPanel[1].voc : ""} onChange={e => {
                                     if (e.target.validity.valid) {
@@ -29,7 +29,7 @@ const SelectSolarPanel = (props) => {
                                 }} />
                         </div>
                         <div className="solarPanelStat">
-                            <p className="solarCalcTxtElement">Corriente de corto circuito:</p>
+                            <p className="solarCalcTxtElement">Corriente de corto circuito (Isc):</p>
                             <input className="solarCalcInputElement" type="tel" pattern="[0-9]+([\.,][0-9]{0,2})?"
                                 value={props.solarPanel[1].isc ? props.solarPanel[1].isc : ""} onChange={e => {
                                     if (e.target.validity.valid) {

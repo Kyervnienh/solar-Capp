@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    height: 100px;
+    height: 90px;
     padding: 16px 2%;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,11 @@
 
 .logo {
     width: auto;
-    height: 68px;
+    height: 58px;
+}
+
+.logoLink {
+    height: 58px;
 }
 
 .navbar {
@@ -22,8 +26,8 @@
 
 .icon-menu {
     position: absolute;
-    top: 50px;
-    z-index: 999;
+    top: 45px;
+    z-index: 9999;
     transform: translateY(-50%);
     right: 16px;
     font-size: 26px;
@@ -38,6 +42,7 @@
 
 .nav {
     visibility: visible;
+    z-index: 9998;
 }
 
 .menuHeader {
@@ -61,19 +66,33 @@
 
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
+    .header {
+        height: 80px;
+    }
+
+    .logo {
+        height: 48px;
+    }
+
+    .logoLink {
+        height: 48px;
+    }
+
     .icon-menu {
         visibility: visible;
+        top: 40px;
     }
 
     .nav {
         visibility: hidden;
         position: absolute;
-        height: 100vh;
+        height: 0;
         width: 100%;
         top: 0;
         left: 0;
         background-color: #212528;
+        transition: all 200ms ease-in-out;
     }
 
     .menuHeader {
@@ -81,6 +100,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        height: 100%;
     }
 
     .menuLink {
@@ -89,6 +109,8 @@
 
     .show {
         visibility: visible;
+        display: block;
+        height: 100vh;
     }
     
 }

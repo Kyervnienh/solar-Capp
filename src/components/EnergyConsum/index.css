@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 16px;
     width: 40%;
     padding: 32px 0;
-    min-width: 337.5px;
 }
 
 .energyConsumptionInput {
@@ -30,6 +30,7 @@
 
 .energyConsumptionTxt {
     color: #212528;
+    text-align: justify;
 }
 
 .energyConsumptionInfo {
@@ -41,13 +42,41 @@
     color: #475afe;
 }
 
-.energyImg {
+.energyImgCont {
     width: 55%;
-    min-width: 320px;
+    overflow: hidden;
+}
+
+.energyImg {
+    width: 100%;
+    min-width: 500px;
+    object-fit: cover;
 }
 
 .energySelector {
     margin: 0;
     width: 100%;
     height: auto;
+}
+
+@media screen and (max-width: 720px) {
+    .energyConsumptionCont{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .energyConsumptionTxtCont {
+        width: 80%;
+        min-width: 320px;
+    }
+
+    .energyImgCont {
+        width: 80%;
+        min-width: 320px;
+    }
+
+    .energyImg {
+        transform: translateX(-10px);
+    }
+    
 }

@@ -21,31 +21,29 @@ const Review = (props) => {
         <div className="solarCalcContainer">
             <TitleSectionCalc>Resumen</TitleSectionCalc>
             <div className="solarCalcReview">
-                <p className="solarCalcTitleElement">Paneles solares</p>
-                <p className="solarCalcTxtElement">Cantidad: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="panel" className="solarCalcTitleElement">Paneles solares</p>
+                <p id="cantidadPanel" className="solarCalcTxtElement">Cantidad: <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.panelParallel * props.panelSerie}</span></p>
-                <p className="solarCalcTxtElement">Potencia (c/u): <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="potenciaPanel" className="solarCalcTxtElement">Potencia (c/u): <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.solarPanel[1].power + " W"}</span></p>
-                <p></p>
-                <p className="solarCalcTitleElement">Baterías solares</p>
-                <p className="solarCalcTxtElement">Cantidad: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="bateria" className="solarCalcTitleElement">Baterías</p>
+                <p id="cantidadBateria" className="solarCalcTxtElement">Cantidad: <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.batteryParallel * props.batterySerie}</span></p>
-                <p className="solarCalcTxtElement">Voltaje (c/u): <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="voltajeBateria" className="solarCalcTxtElement">Voltaje (c/u): <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.solarBattery[1].potential + " V"}</span></p>
-                <p className="solarCalcTxtElement">Capacidad (c/u): <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="capacidadBateria" className="solarCalcTxtElement">Capacidad (c/u): <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.solarBattery[1].capacity + " Ah"}</span></p>
-                <p className="solarCalcTitleElement">Inversor</p>
-                <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="inversor" className="solarCalcTitleElement">Inversor</p>
+                <p id="voltajeInversor" className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.potential + " V"}</span></p>
-                <p className="solarCalcTxtElement">Potencia nominal: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="potenciaInversor" className="solarCalcTxtElement">Potencia nominal: <span className="solarCalcTxtElementSpan reviewSpan">
                     {Math.floor((props.solarPanel[1].power * props.panelParallel * props.panelSerie) / 500) * 500 + " VA"}</span></p>
-                <p></p>
-                <p className="solarCalcTitleElement">Regulador de carga</p>
-                <p className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="regulador" className="solarCalcTitleElement">Regulador de carga</p>
+                <p id="voltajeRegulador" className="solarCalcTxtElement">Voltaje nominal: <span className="solarCalcTxtElementSpan reviewSpan">
                     {props.potential + " V"}</span></p>
-                <p className="solarCalcTxtElement">Intensidad mínima: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="intensidadRegulador" className="solarCalcTxtElement">Intensidad mínima: <span className="solarCalcTxtElementSpan reviewSpan">
                     {10*Math.ceil(props.solarPanel[1].isc * props.panelParallel * 1.25 / 10) + " A"}</span></p>
-                <p className="solarCalcTxtElement">Potencia: <span className="solarCalcTxtElementSpan reviewSpan">
+                <p id="potenciaRegulador" className="solarCalcTxtElement">Potencia: <span className="solarCalcTxtElementSpan reviewSpan">
                     {Math.floor((props.solarPanel[1].power * props.panelParallel * props.panelSerie) / 500) * 500 + " W"}</span></p>
             </div>
 
