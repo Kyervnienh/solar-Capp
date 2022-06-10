@@ -15,7 +15,7 @@ const InfoCalc = () => {
             <div className="infoCalcInfo">
                 <div className="infoCalcTxtCont">
                     <p className="infoCalcTxt">Una calculadora solar te permite conocer la cantidad de paneles solares, baterías y la
-                        capacidad del inversornecesarios para tu instalación.<br /><br />
+                        capacidad del inversor necesario para tu instalación.<br /><br />
 
                         Te puedes dar una idea general de lo que costaría una instalación de este tipo y el ahorro esperado.<br /><br />
 

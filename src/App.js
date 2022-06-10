@@ -9,6 +9,7 @@ import SolarCalcInter from './pages/calculadora-solar-interconectado';
 import AditionalInfo from './pages/informacion-adicional';
 import HowTo from './pages/como-funciona';
 import SolarCalc from './pages/calculadora solar';
+import BtnScrollToTop from './components/BtnScrollToTop';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/informacion-adicional' element={<AditionalInfo />} />
           <Route path='/como-funciona' element={<HowTo />} />
         </Routes>
+        <BtnScrollToTop />
         <Footer />
       </Router>
     </div>

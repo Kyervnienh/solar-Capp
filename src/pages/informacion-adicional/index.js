@@ -26,7 +26,7 @@ const AditionalInfo = () => {
             text: "La conexión en serie sirve para incrementar el voltaje de la instalación sin incrementar la corriente, mientras que en la conexión en paralelo incrementa la corriente, pero sin incrementar el voltaje, para aprender a realizar este tipo de conexión se puede apoyar de un diagrama en internet o mediante un profesional."
         },
         {
-            title: "¿Para qué se utiliza la información de mi ubicación?",
+            title: "¿Cómo se utiliza la información de mi ubicación?",
             text: "La ubicación se usa única y exclusivamente para obtener la irradiancia solar en la ubicación seleccionada de los datos de la NASA Prediction Of Worldwide Energy Resources y así realizar los calculos correspondientes. Los datos de ubicación no se almacenan en nuestros servidores ni se les da un uso ajeno a lo indicado."
         },
         {

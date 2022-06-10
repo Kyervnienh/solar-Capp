@@ -85,22 +85,20 @@
     }
 
     .nav {
-        visibility: hidden;
         position: absolute;
         height: 0;
-        width: 100%;
+        width: 100vw;
         top: 0;
         left: 0;
         background-color: #212528;
-        transition: all 200ms ease-in-out;
+        transition: all 300ms;
     }
 
     .menuHeader {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
+        display: none;
     }
 
     .menuLink {
@@ -108,9 +106,13 @@
     }
 
     .show {
-        visibility: visible;
-        display: block;
         height: 100vh;
+    }
+
+    .show .menuHeader {
+        display: flex;
+        width: 100%;
+        height: 100%;
     }
     
 }

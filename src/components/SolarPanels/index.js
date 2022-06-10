@@ -17,7 +17,7 @@ const SolarPanels = (props) => {
         props.setPanel(props.panels[3]);
         window.scrollTo({
             left: 0,
-            top: 100,
+            top: 90,
             behavior: "smooth",
         });
     }
@@ -27,7 +27,7 @@ const SolarPanels = (props) => {
         props.setPanel(props.panels[1]);
         window.scrollTo({
             left: 0,
-            top: 100,
+            top: 90,
             behavior: "smooth",
         });
     }

@@ -24,7 +24,7 @@ const SolarBatteries = (props) => {
         props.setPanel(props.panels[4]);
         window.scrollTo({
             left: 0,
-            top: 100,
+            top: 90,
             behavior: "smooth",
         });
     }
@@ -34,7 +34,7 @@ const SolarBatteries = (props) => {
         props.setPanel(props.panels[2]);
         window.scrollTo({
             left: 0,
-            top: 100,
+            top: 90,
             behavior: "smooth",
         });
     }
