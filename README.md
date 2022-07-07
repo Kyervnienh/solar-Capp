@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Solar CAPP | Calculadora solar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ¿Qué es Solar CAPP?
 
-## Available Scripts
+Solar CAPP es una aplicación web capaz de realizar un dimensionado solar autónomo e interconectado a la red utilizando el consumo eléctrico y la ubicación del lugar donde se pretende colocar esta instalación.
 
-In the project directory, you can run:
+Para un sistema solar autónomo se realiza el calculo de los paneles solares, baterías, inversor y regulador de carga.
 
-### `npm start`
+Para el sistema solar interconectado a la red se calcula el ahorro económico y energético, así como el tiempo de retorno de inversión en base al costo estimado de la instalación.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ¿Cómo funciona Solar CAPP?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Solar CAPP no solo realiza el dimensionado, también proporciona información sobre las instalaciones solares fotovoltaicas.
 
-### `npm test`
+Para realizar el calculo debemos ir a la sección "calculadora solar" y seleccionar el tipo de sistema que se desea implementar (autónomo o interconectado). Una vez seleccionado el tipo de sistema se debe seleccionar la ubicación en el mapa, para después introducir el consumo eléctrico.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lo anterior aplica para los dos tipos de sistemas y a partir de aquí se encuentra la diferencia en los calculos:
 
-### `npm run build`
+### Sistema autónomo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En este punto debemos seleccionar un panel solar o introducir los datos de un panel solar diferente, en caso de introducir los datos de un panel solar diferente debemos seleccionar "personalizado", posteriormente se da click en "calcular los paneles solares y nos indicará la cantidad necesaria para nuestra instalación.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Lo siguiente es el calculo de las baterías de forma similar a los paneles solares con la diferencia que existe una casilla llamada "días de autonomía" la cual indica el número de días que la instalación puede proporcionar energía sin recibir radiación solar (debido a tormentas, huracanes, etc.) normalmente se realiza para 2 días, pero se puede modificar. Esto nos indicará la cantidad de baterías necesarias, así como el inversor y regulador de carga recomendados.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para finalizar se muestra un resumen con los elementos calculados.
 
-### `npm run eject`
+### Sistema interconectado a la red
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Igual que en el sistema autónomo debemos seleccionar un panel solar o introducir los datos de un panel solar diferente.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+En este tipo de calculo tenemos una interfaz donde podemos modificar la cantidad de paneles solares a utilizar, el consumo eléctrico, costo de la electricidad y el costo del sistema. Lo que nos indica es el consumo eléctrico y el costo de la electricidad esperado después de implementar el sistema, así como el ahorro económico y el tiempo de retorno de inversión.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ¿Cómo se ve Solar CAPP en la web?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Puedes visualizar como se ve actualmente Solar CAPP visitando: [Solar CAPP](https://solar-capp.netlify.app)
 
-## Learn More
+## ¿Cómo puedo usar Solar CAPP localmente?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para comenzar a usar Solar CAPP localmente:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Clona el repositorio y una vez clonado, instala las dependencias necesarias ejecutando el siguiente comando:
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install
+```
 
-### Analyzing the Bundle Size
+Levanta el proyecto con el siguiente comando:
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Y listo, deberías de poder visualizar la información.
 
-### Making a Progressive Web App
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[Solar CAPP](https://solar-capp.netlify.app) es desarrollada usando tecnologías como:
 
-### Advanced Configuration
+- :bulb: **REACTJS**: Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- :art: **CSS**: Hojas de estilo en cascada.
 
-### Deployment
+- :iphone: **Responsive**: Diseñada para visualizarse en distintos tamaños de pantalla.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- :gear: **Best Practices**: Flujo de trabajo sólido para mantener el código limpio y estructurado.
 
-### `npm run build` fails to minify
+- :earth_americas: **Leaflet**: Biblioteca de Javascript para la creación de mapas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- :satellite: **NASA POWER**: API de la NASA que provee información sobre variables solares y metereologicas de la base de datos de la NASA.
